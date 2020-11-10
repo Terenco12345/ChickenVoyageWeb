@@ -15,6 +15,12 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@user/*": ["app/features/user"],
+      "@home/*": ["app/features/home"],
+      "@character/*": ["app/features/character"],
+      "@campaign/*": ["app/features/campaign"],
+    }
   }
 }
