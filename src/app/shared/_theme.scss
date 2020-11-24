@@ -1,0 +1,19 @@
+// This SCSS file contains classes that should be applied to the body, to act as the theme of the app
+@import "./colors";
+
+
+.theme-light {
+    @each $name, $color in $colors {
+        #{$name}: nth($color, 1);
+    }
+}
+
+.theme-dark {
+    @each $name, $color in $colors {
+        #{$name}: nth($color, 2);
+    }
+}
+
+.theme-change-transition {
+    transition: color 0.5s, background-color 0.5s;
+}
