@@ -47,7 +47,7 @@ export class ThemeService {
   /**
    * Obtain the theme setting from local storage.
    */
-  private getCurrentThemeFromLocalStorage() : Theme{
+  public getCurrentThemeFromLocalStorage() : Theme{
     var themeString: string = localStorage.getItem("theme");
     switch(themeString){
       case Theme.LIGHT:

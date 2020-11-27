@@ -1,21 +1,20 @@
 // Color scheme
-$primary-color-1: #fbf236; // Yellow
-$primary-color-2: #df7126; // Orange
+$brand-color: #bea534;
+$brand-color-secondary: #332020;
 
-$secondary-color-1: #6abe30; // Light Green
-$secondary-color-2: #37946e; // Dark Green
+$light-accent: #c2bda9;
+$dark-accent: #2b2927;
 
-$light-shade: #EAF2ED; // White
-$dark-shade: #202623; // Black
+$light-shade: #e2dbc5; // White
+$dark-shade: #181616; // Black
 
 // Colors are sorted into tuples (light theme, dark theme)
 $colors: (
-    --primary-color-1: ($primary-color-1, darken($primary-color-1, 20%)),
-    --primary-color-2: ($primary-color-2, darken($primary-color-2, 20%)),
+    --brand-color: ($brand-color, $brand-color-secondary),
 
-    --secondary-color-1: ($secondary-color-1, darken($secondary-color-1, 20%)),
-    --secondary-color-2: ($secondary-color-2, darken($secondary-color-2, 20%)),
-
+    --light-accent: ($light-accent, $dark-accent),
+    --dark-accent: ($dark-accent, $light-accent),
+    
     --background-color: ($light-shade, $dark-shade),
     --text-color: ($dark-shade, $light-shade)
 );

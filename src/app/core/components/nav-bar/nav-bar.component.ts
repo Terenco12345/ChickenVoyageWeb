@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ThemeService } from '../../services/theme/theme.service';
+import { Theme, ThemeService } from '../../services/theme/theme.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -15,5 +15,9 @@ export class NavBarComponent implements OnInit {
 
   toggleTheme(){
     this.themeService.toggleLightAndDarkMode();
+  }
+
+  getCurrentMode() : Theme{
+    return this.themeService.getCurrentThemeFromLocalStorage();
   }
 }
