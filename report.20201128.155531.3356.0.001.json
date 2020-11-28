@@ -1,0 +1,537 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20201128.155531.3356.0.001.json",
+    "dumpEventTime": "2020-11-28T15:55:31Z",
+    "dumpEventTimeStamp": "1606532131973",
+    "processId": 3356,
+    "cwd": "D:\\Code - Personal\\ChickenVoyageWeb",
+    "commandLine": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\Code - Personal\\ChickenVoyageWeb\\node_modules\\@ngtools\\webpack\\src\\type_checker_worker.js",
+      "9d93e901-158a-4cf9-ba1b-2f0582ffcfeb"
+    ],
+    "nodejsVersion": "v12.16.1",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.16.1",
+      "v8": "7.8.279.23-node.31",
+      "uv": "1.34.0",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.40.0",
+      "napi": "5",
+      "llhttp": "2.0.4",
+      "http_parser": "2.9.3",
+      "openssl": "1.1.1d",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019c",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.16.1/node-v12.16.1-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.16.1/node-v12.16.1.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.16.1/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.19041",
+    "osVersion": "Windows 10 Home",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "AMD Ryzen 5 3600 6-Core Processor              ",
+        "speed": 3593,
+        "user": 116437,
+        "nice": 0,
+        "sys": 144875,
+        "idle": 22069281,
+        "irq": 23328
+      },
+      {
+        "model": "AMD Ryzen 5 3600 6-Core Processor              ",
+        "speed": 3593,
+        "user": 116046,
+        "nice": 0,
+        "sys": 71234,
+        "idle": 22143109,
+        "irq": 6359
+      },
+      {
+        "model": "AMD Ryzen 5 3600 6-Core Processor              ",
+        "speed": 3593,
+        "user": 1758093,
+        "nice": 0,
+        "sys": 1402453,
+        "idle": 19169843,
+        "irq": 345453
+      },
+      {
+        "model": "AMD Ryzen 5 3600 6-Core Processor              ",
+        "speed": 3593,
+        "user": 1030609,
+        "nice": 0,
+        "sys": 820578,
+        "idle": 20479203,
+        "irq": 82703
+      },
+      {
+        "model": "AMD Ryzen 5 3600 6-Core Processor              ",
+        "speed": 3593,
+        "user": 500843,
+        "nice": 0,
+        "sys": 272359,
+        "idle": 21557187,
+        "irq": 42921
+      },
+      {
+        "model": "AMD Ryzen 5 3600 6-Core Processor              ",
+        "speed": 3593,
+        "user": 292578,
+        "nice": 0,
+        "sys": 214109,
+        "idle": 21823703,
+        "irq": 25406
+      },
+      {
+        "model": "AMD Ryzen 5 3600 6-Core Processor              ",
+        "speed": 3593,
+        "user": 3054828,
+        "nice": 0,
+        "sys": 1799812,
+        "idle": 17475781,
+        "irq": 310687
+      },
+      {
+        "model": "AMD Ryzen 5 3600 6-Core Processor              ",
+        "speed": 3593,
+        "user": 3450906,
+        "nice": 0,
+        "sys": 1579328,
+        "idle": 17300187,
+        "irq": 107687
+      },
+      {
+        "model": "AMD Ryzen 5 3600 6-Core Processor              ",
+        "speed": 3593,
+        "user": 2522343,
+        "nice": 0,
+        "sys": 1067375,
+        "idle": 18740703,
+        "irq": 95781
+      },
+      {
+        "model": "AMD Ryzen 5 3600 6-Core Processor              ",
+        "speed": 3593,
+        "user": 1375796,
+        "nice": 0,
+        "sys": 645875,
+        "idle": 20308750,
+        "irq": 73015
+      },
+      {
+        "model": "AMD Ryzen 5 3600 6-Core Processor              ",
+        "speed": 3593,
+        "user": 3224609,
+        "nice": 0,
+        "sys": 1352062,
+        "idle": 17753750,
+        "irq": 87515
+      },
+      {
+        "model": "AMD Ryzen 5 3600 6-Core Processor              ",
+        "speed": 3593,
+        "user": 3521437,
+        "nice": 0,
+        "sys": 1468906,
+        "idle": 17340078,
+        "irq": 82406
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "Hamachi",
+        "internal": false,
+        "mac": "7a:79:19:30:79:95",
+        "address": "2620:9b::1930:7995",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Hamachi",
+        "internal": false,
+        "mac": "7a:79:19:30:79:95",
+        "address": "fe80::fd5e:2527:7f73:b25e",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 12
+      },
+      {
+        "name": "Hamachi",
+        "internal": false,
+        "mac": "7a:79:19:30:79:95",
+        "address": "25.48.121.149",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Ethernet",
+        "internal": false,
+        "mac": "b4:2e:99:96:bc:49",
+        "address": "2406:e003:1431:c101:9ccc:af5b:9cfe:2fb4",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Ethernet",
+        "internal": false,
+        "mac": "b4:2e:99:96:bc:49",
+        "address": "2406:e003:1431:c101:9070:73:3c0c:d783",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Ethernet",
+        "internal": false,
+        "mac": "b4:2e:99:96:bc:49",
+        "address": "fe80::9ccc:af5b:9cfe:2fb4",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 4
+      },
+      {
+        "name": "Ethernet",
+        "internal": false,
+        "mac": "b4:2e:99:96:bc:49",
+        "address": "192.168.178.36",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "vEthernet (WSL)",
+        "internal": false,
+        "mac": "00:15:5d:55:f0:5d",
+        "address": "fe80::4009:79b6:f166:d981",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 34
+      },
+      {
+        "name": "vEthernet (WSL)",
+        "internal": false,
+        "mac": "00:15:5d:55:f0:5d",
+        "address": "172.25.128.1",
+        "netmask": "255.255.240.0",
+        "family": "IPv4"
+      }
+    ],
+    "host": "TerencePC"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00007ff6bb3f19f9",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+10873"
+    },
+    {
+      "pc": "0x00007ff6bb3f5e1c",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+28316"
+    },
+    {
+      "pc": "0x00007ff6bb3f4dd8",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+24152"
+    },
+    {
+      "pc": "0x00007ff6bb4f34cb",
+      "symbol": "v8::base::CPU::has_sse+38363"
+    },
+    {
+      "pc": "0x00007ff6bbd09f4e",
+      "symbol": "v8::Isolate::ReportExternalAllocationLimitReached+94"
+    },
+    {
+      "pc": "0x00007ff6bbcf2021",
+      "symbol": "v8::SharedArrayBuffer::Externalize+833"
+    },
+    {
+      "pc": "0x00007ff6bbbbe57c",
+      "symbol": "v8::internal::Heap::EphemeronKeyWriteBarrierFromCode+1436"
+    },
+    {
+      "pc": "0x00007ff6bbbc97d0",
+      "symbol": "v8::internal::Heap::ProtectUnprotectedMemoryChunks+1312"
+    },
+    {
+      "pc": "0x00007ff6bbbc62f4",
+      "symbol": "v8::internal::Heap::PageFlagsAreConsistent+3204"
+    },
+    {
+      "pc": "0x00007ff6bbbbbb13",
+      "symbol": "v8::internal::Heap::CollectGarbage+1283"
+    },
+    {
+      "pc": "0x00007ff6bbbba184",
+      "symbol": "v8::internal::Heap::AddRetainedMap+2452"
+    },
+    {
+      "pc": "0x00007ff6bbbdb36d",
+      "symbol": "v8::internal::Factory::NewFillerObject+61"
+    },
+    {
+      "pc": "0x00007ff6bb940c51",
+      "symbol": "v8::internal::interpreter::JumpTableTargetOffsets::iterator::operator=+1665"
+    },
+    {
+      "pc": "0x00007ff6bc154ddd",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+546637"
+    },
+    {
+      "pc": "0x000003937f9060b4",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 2154962944,
+    "totalCommittedMemory": 2154962944,
+    "usedMemory": 2144161904,
+    "availableMemory": 50036112,
+    "memoryLimit": 2197815296,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 262144,
+        "capacity": 32808,
+        "used": 32808,
+        "available": 0
+      },
+      "new_space": {
+        "memorySize": 5242880,
+        "committedMemory": 5242880,
+        "capacity": 2618640,
+        "used": 1106792,
+        "available": 1511848
+      },
+      "old_space": {
+        "memorySize": 2113814528,
+        "committedMemory": 2113814528,
+        "capacity": 2111024048,
+        "used": 2107970776,
+        "available": 3053272
+      },
+      "code_space": {
+        "memorySize": 3313664,
+        "committedMemory": 3313664,
+        "capacity": 2943776,
+        "used": 2943776,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 1052672,
+        "committedMemory": 1052672,
+        "capacity": 953600,
+        "used": 953600,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 31227904,
+        "committedMemory": 31227904,
+        "capacity": 31151368,
+        "used": 31151368,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 49152,
+        "committedMemory": 49152,
+        "capacity": 2784,
+        "used": 2784,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 2618640,
+        "used": 0,
+        "available": 2618640
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 135.015,
+    "kernelCpuSeconds": 5.875,
+    "cpuConsumptionPercent": 13.1796,
+    "maxRss": 2253651968,
+    "pageFaults": {
+      "IORequired": 1486078,
+      "IONotRequired": 0
+    },
+    "fsActivity": {
+      "reads": 5287,
+      "writes": 121
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "ACLOCAL_PATH": "C:\\Program Files\\Git\\mingw64\\share\\aclocal;C:\\Program Files\\Git\\usr\\share\\aclocal",
+    "ALLUSERSPROFILE": "C:\\ProgramData",
+    "APPDATA": "C:\\Users\\Teren\\AppData\\Roaming",
+    "APP_CONFIG_CONNECTION_STRING": "Endpoint=https://tidy-config-prod.azconfig.io;Id=YkUi-l5-s0:O0qaZLkUqm7rYpUh17QQ;Secret=9HpgNEL7/1d++kW6BDLDqplC+tYbv/6RJtlr9mXyLvo=",
+    "AZURE_CLIENT_ID": "a6ec79a5-c897-45bc-ad42-d5f03a8345e4",
+    "AZURE_CLIENT_SECRET": "2b3i5rZawB~2cWes8d7dGycLZ1z3AtwN.W",
+    "AZURE_TENANT_ID": "e7745776-2321-458b-93b7-13918d7c8e7b",
+    "BROWSERSLIST_IGNORE_OLD_DATA": "1",
+    "COMMONPROGRAMFILES": "C:\\Program Files\\Common Files",
+    "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+    "CommonProgramW6432": "C:\\Program Files\\Common Files",
+    "COMPUTERNAME": "TERENCEPC",
+    "COMSPEC": "C:\\WINDOWS\\system32\\cmd.exe",
+    "CONFIG_SITE": "C:/Program Files/Git/mingw64/etc/config.site",
+    "CUDA_PATH": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1",
+    "CUDA_PATH_V10_1": "C:\\Program Files\\NVIDIA GPU Computing Toolkid\\CUDA\\v10.1",
+    "DISPLAY": "needs-to-be-defined",
+    "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+    "EXEPATH": "C:\\Program Files\\Git",
+    "FPS_BROWSER_APP_PROFILE_STRING": "Internet Explorer",
+    "FPS_BROWSER_USER_PROFILE_STRING": "Default",
+    "FR_CUSTOMDATA_PATH": "D:\\Games\\Steam\\steamapps\\common\\FaceRig\\Mod\\VP\\PC_CustomData\\",
+    "HOME": "C:\\Users\\Teren",
+    "HOMEDRIVE": "C:",
+    "HOMEPATH": "\\Users\\Teren",
+    "HOSTNAME": "TerencePC",
+    "INFOPATH": "C:\\Program Files\\Git\\usr\\local\\info;C:\\Program Files\\Git\\usr\\share\\info;C:\\Program Files\\Git\\usr\\info;C:\\Program Files\\Git\\share\\info",
+    "JAVA_HOME": "C:\\Program Files\\Java\\jdk1.8.0_241",
+    "LANG": "en_US.UTF-8",
+    "LOCALAPPDATA": "C:\\Users\\Teren\\AppData\\Local",
+    "LOGONSERVER": "\\\\TERENCEPC",
+    "MANPATH": "C:\\Program Files\\Git\\mingw64\\local\\man;C:\\Program Files\\Git\\mingw64\\share\\man;C:\\Program Files\\Git\\usr\\local\\man;C:\\Program Files\\Git\\usr\\share\\man;C:\\Program Files\\Git\\usr\\man;C:\\Program Files\\Git\\share\\man",
+    "MINGW_CHOST": "x86_64-w64-mingw32",
+    "MINGW_PACKAGE_PREFIX": "mingw-w64-x86_64",
+    "MINGW_PREFIX": "C:/Program Files/Git/mingw64",
+    "MSYSTEM": "MINGW64",
+    "MSYSTEM_CARCH": "x86_64",
+    "MSYSTEM_CHOST": "x86_64-w64-mingw32",
+    "MSYSTEM_PREFIX": "C:/Program Files/Git/mingw64",
+    "NUMBER_OF_PROCESSORS": "12",
+    "NVCUDASAMPLES10_1_ROOT": "C:\\ProgramData\\NVIDIA Corporation\\CUDA Samples\\v10.1",
+    "NVCUDASAMPLES10_2_ROOT": "C:\\ProgramData\\NVIDIA Corporation\\CUDA Samples\\v10.2",
+    "NVCUDASAMPLES_ROOT": "C:\\ProgramData\\NVIDIA Corporation\\CUDA Samples\\v10.1",
+    "NVTOOLSEXT_PATH": "C:\\Program Files\\NVIDIA Corporation\\NvToolsExt\\",
+    "OneDrive": "C:\\Users\\Teren\\OneDrive",
+    "OneDriveConsumer": "C:\\Users\\Teren\\OneDrive",
+    "ORIGINAL_PATH": "C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Users\\Teren\\bin;C:\\ActiveTcl\\bin;C:\\Program Files (x86)\\Microsoft SDKs\\Azure\\CLI2\\wbin;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\bin;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\libnvvp;C:\\Program Files (x86)\\Razer\\ChromaBroadcast\\bin;C:\\Program Files\\Razer\\ChromaBroadcast\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0;C:\\Windows\\System32\\OpenSSH;C:\\Program Files\\nodejs;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Users\\Teren\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Teren\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Teren\\AppData\\Roaming\\npm;C:\\Users\\Teren\\AppData\\Roaming\\ffmpeg\\bin;C:\\Program Files\\Java\\jdk1.8.0_251\\bin;C:\\Program Files (x86)\\Yarn\\bin;C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2019.4.0;C:\\Program Files\\dotnet;C:\\Program Files\\Git\\cmd;D:\\Program Files\\MiKTeX\\miktex\\bin\\x64;C:\\Program Files\\Pandoc;C:\\Program Files\\Calibre2;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0;C:\\WINDOWS\\System32\\OpenSSH;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn;D:\\Tools\\docfx;C:\\Program Files\\Azure Data Studio\\bin;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\ProgramData\\DockerDesktop\\version-bin;C:\\Program Files\\Microsoft\\Web Platform Installer;C:\\Users\\Teren\\AppData\\Local\\Programs\\Python\\Python37\\Scripts;C:\\Users\\Teren\\AppData\\Local\\Programs\\Python\\Python37;C:\\Users\\Teren\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Teren\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Teren\\AppData\\Roaming\\npm;C:\\Program Files\\Java\\jdk1.8.0_241\\bin;C:\\Users\\Teren\\AppData\\Roaming\\ffmpeg\\bin;C:\\Users\\Teren\\AppData\\Local\\atom\\bin;C:\\Users\\Teren\\AppData\\Local\\Yarn\\bin;C:\\Program Files\\NVIDIA GPU Computing Toolkid\\CUDA\\v10.1\\bin;C:\\Program Files\\NVIDIA GPU Computing Toolkid\\CUDA\\v10.1\\libnvvp;C:\\Program Files\\heroku\\bin;C:\\Users\\Teren\\.dotnet\\tools;C:\\Users\\Teren\\.dotnet\\tools;C:\\Users\\Teren\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\Azure Data Studio\\bin",
+    "ORIGINAL_TEMP": "C:/Users/Teren/AppData/Local/Temp",
+    "ORIGINAL_TMP": "C:/Users/Teren/AppData/Local/Temp",
+    "OS": "Windows_NT",
+    "PATH": "C:\\Users\\Teren\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\local\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Users\\Teren\\bin;C:\\ActiveTcl\\bin;C:\\Program Files (x86)\\Microsoft SDKs\\Azure\\CLI2\\wbin;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\bin;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\libnvvp;C:\\Program Files (x86)\\Razer\\ChromaBroadcast\\bin;C:\\Program Files\\Razer\\ChromaBroadcast\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0;C:\\Windows\\System32\\OpenSSH;C:\\Program Files\\nodejs;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Users\\Teren\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Teren\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Teren\\AppData\\Roaming\\npm;C:\\Users\\Teren\\AppData\\Roaming\\ffmpeg\\bin;C:\\Program Files\\Java\\jdk1.8.0_251\\bin;C:\\Program Files (x86)\\Yarn\\bin;C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2019.4.0;C:\\Program Files\\dotnet;C:\\Program Files\\Git\\cmd;D:\\Program Files\\MiKTeX\\miktex\\bin\\x64;C:\\Program Files\\Pandoc;C:\\Program Files\\Calibre2;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0;C:\\WINDOWS\\System32\\OpenSSH;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn;D:\\Tools\\docfx;C:\\Program Files\\Azure Data Studio\\bin;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\ProgramData\\DockerDesktop\\version-bin;C:\\Program Files\\Microsoft\\Web Platform Installer;C:\\Users\\Teren\\AppData\\Local\\Programs\\Python\\Python37\\Scripts;C:\\Users\\Teren\\AppData\\Local\\Programs\\Python\\Python37;C:\\Users\\Teren\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Teren\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Teren\\AppData\\Roaming\\npm;C:\\Program Files\\Java\\jdk1.8.0_241\\bin;C:\\Users\\Teren\\AppData\\Roaming\\ffmpeg\\bin;C:\\Users\\Teren\\AppData\\Local\\atom\\bin;C:\\Users\\Teren\\AppData\\Local\\Yarn\\bin;C:\\Program Files\\NVIDIA GPU Computing Toolkid\\CUDA\\v10.1\\bin;C:\\Program Files\\NVIDIA GPU Computing Toolkid\\CUDA\\v10.1\\libnvvp;C:\\Program Files\\heroku\\bin;C:\\Users\\Teren\\.dotnet\\tools;C:\\Users\\Teren\\.dotnet\\tools;C:\\Users\\Teren\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\Azure Data Studio\\bin;C:\\Program Files\\Git\\usr\\bin\\vendor_perl;C:\\Program Files\\Git\\usr\\bin\\core_perl",
+    "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC",
+    "PKG_CONFIG_PATH": "C:\\Program Files\\Git\\mingw64\\lib\\pkgconfig;C:\\Program Files\\Git\\mingw64\\share\\pkgconfig",
+    "PLINK_PROTOCOL": "ssh",
+    "PROCESSOR_ARCHITECTURE": "AMD64",
+    "PROCESSOR_IDENTIFIER": "AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD",
+    "PROCESSOR_LEVEL": "23",
+    "PROCESSOR_REVISION": "7100",
+    "ProgramData": "C:\\ProgramData",
+    "PROGRAMFILES": "C:\\Program Files",
+    "ProgramFiles(x86)": "C:\\Program Files (x86)",
+    "ProgramW6432": "C:\\Program Files",
+    "PSModulePath": "C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\PowerShell\\Modules\\",
+    "PUBLIC": "C:\\Users\\Public",
+    "PWD": "D:/Code - Personal/ChickenVoyageWeb",
+    "SESSIONNAME": "Console",
+    "SHELL": "C:\\Program Files\\Git\\usr\\bin\\bash.exe",
+    "SHLVL": "2",
+    "SSH_ASKPASS": "C:/Program Files/Git/mingw64/libexec/git-core/git-gui--askpass",
+    "SYSTEMDRIVE": "C:",
+    "SYSTEMROOT": "C:\\WINDOWS",
+    "TEMP": "C:\\Users\\Teren\\AppData\\Local\\Temp",
+    "TERM": "xterm",
+    "TERM_PROGRAM": "mintty",
+    "TERM_PROGRAM_VERSION": "3.1.6",
+    "TMP": "C:\\Users\\Teren\\AppData\\Local\\Temp",
+    "TMPDIR": "C:\\Users\\Teren\\AppData\\Local\\Temp",
+    "USERDOMAIN": "TERENCEPC",
+    "USERDOMAIN_ROAMINGPROFILE": "TERENCEPC",
+    "USERNAME": "Teren",
+    "USERPROFILE": "C:\\Users\\Teren",
+    "VBOX_HWVIRTEX_IGNORE_SVM_IN_USE": "1",
+    "WEBPACK_DEV_SERVER": "true",
+    "WINDIR": "C:\\WINDOWS",
+    "_": "C:/Program Files/nodejs/node"
+  },
+  "sharedObjects": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+    "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+    "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+    "C:\\WINDOWS\\System32\\WS2_32.dll",
+    "C:\\WINDOWS\\System32\\RPCRT4.dll",
+    "C:\\WINDOWS\\System32\\PSAPI.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\dbghelp.dll",
+    "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+    "C:\\WINDOWS\\System32\\ucrtbase.dll",
+    "C:\\WINDOWS\\System32\\msvcrt.dll",
+    "C:\\WINDOWS\\System32\\sechost.dll",
+    "C:\\WINDOWS\\System32\\USER32.dll",
+    "C:\\WINDOWS\\SYSTEM32\\IPHLPAPI.DLL",
+    "C:\\WINDOWS\\System32\\win32u.dll",
+    "C:\\WINDOWS\\System32\\GDI32.dll",
+    "C:\\WINDOWS\\System32\\gdi32full.dll",
+    "C:\\WINDOWS\\SYSTEM32\\USERENV.dll",
+    "C:\\WINDOWS\\System32\\msvcp_win.dll",
+    "C:\\WINDOWS\\System32\\CRYPT32.dll",
+    "C:\\WINDOWS\\System32\\bcrypt.dll",
+    "C:\\WINDOWS\\SYSTEM32\\WINMM.dll",
+    "C:\\WINDOWS\\System32\\IMM32.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\powrprof.dll",
+    "C:\\WINDOWS\\SYSTEM32\\UMPDC.dll",
+    "C:\\WINDOWS\\SYSTEM32\\CRYPTBASE.DLL",
+    "C:\\WINDOWS\\system32\\uxtheme.dll",
+    "C:\\WINDOWS\\System32\\combase.dll",
+    "C:\\WINDOWS\\system32\\mswsock.dll",
+    "C:\\WINDOWS\\SYSTEM32\\kernel.appcore.dll",
+    "C:\\WINDOWS\\System32\\bcryptprimitives.dll",
+    "C:\\WINDOWS\\System32\\NSI.dll",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc6.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\DNSAPI.dll",
+    "C:\\WINDOWS\\system32\\napinsp.dll",
+    "C:\\WINDOWS\\system32\\pnrpnsp.dll",
+    "C:\\WINDOWS\\system32\\wshbth.dll",
+    "C:\\WINDOWS\\system32\\NLAapi.dll",
+    "C:\\WINDOWS\\System32\\winrnr.dll"
+  ]
+}

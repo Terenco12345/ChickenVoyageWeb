@@ -1,20 +1,71 @@
 // Color scheme
-$brand-color: #bea534;
-$brand-color-secondary: #332020;
+$color-1: #FDE74C;
+$color-1-dark: #414141;
+$color-2: #5BC0EB;
+$color-2-dark: #838383;
+$color-3: #9BC53D;
+$color-3-dark: #525252;
+$color-4: #E55934;
+$color-4-dark: #242424;
+$color-5: #FA7921;
+$color-5-dark: #000000;
 
-$light-accent: #c2bda9;
-$dark-accent: #2b2927;
+// Background
+$background-color: #f4ffdc;
+$background-color-dark: #121212;
 
-$light-shade: #e2dbc5; // White
-$dark-shade: #181616; // Black
+// Regular text
+$text-color: #121212;
+$text-color-dark:  #cadbe2;
+
+// For text in links and buttons
+$special-text-color: #09212b;
+$special-text-color-dark: #c4c4c4;
+
+// For text in links and buttons being hovered
+$special-text-color-emphasize: #2385af;
+$special-text-color-emphasize-dark: #ffffff;
+
+// Logo colors
+$logo-outline: #000000;
+$logo-outline-dark: #000000;
+
+$logo-text1: #6abe30;
+$logo-text1-dark: #504891;
+
+$logo-text2: #37946e;
+$logo-text2-dark: #44225c;
+
+$logo-chicken1: #fbf236;
+$logo-chicken1-dark: #343d8b;
+
+$logo-chicken1Shadow: #d4cc21;
+$logo-chicken1Shadow-dark: #2b3272;
+
+$logo-chicken2: #df7126;
+$logo-chicken2-dark: #561d68;
+
 
 // Colors are sorted into tuples (light theme, dark theme)
 $colors: (
-    --brand-color: ($brand-color, $brand-color-secondary),
+    // Brand colors
+    --color-1: ($color-1, $color-1-dark),
+    --color-2: ($color-2, $color-2-dark),
+    --color-3: ($color-3, $color-3-dark),
+    --color-4: ($color-4, $color-4-dark),
+    --color-5: ($color-5, $color-5-dark),
 
-    --light-accent: ($light-accent, $dark-accent),
-    --dark-accent: ($dark-accent, $light-accent),
-    
-    --background-color: ($light-shade, $dark-shade),
-    --text-color: ($dark-shade, $light-shade)
+    // Text colors
+    --background-color: ($background-color, $background-color-dark),
+    --text-color: ($text-color, $text-color-dark),
+    --special-text-color: ($special-text-color, $special-text-color-dark),
+    --special-text-color-emphasize: ($special-text-color-emphasize, $special-text-color-emphasize-dark),
+
+    // Logo colors
+    --logo-outline: ($logo-outline, $logo-outline-dark),
+    --logo-text1: ($logo-text1, $logo-text1-dark),
+    --logo-text2: ($logo-text2, $logo-text2-dark),
+    --logo-chicken1: ($logo-chicken1, $logo-chicken1-dark),
+    --logo-chicken1Shadow: ($logo-chicken1Shadow, $logo-chicken1Shadow-dark),
+    --logo-chicken2: ($logo-chicken2, $logo-chicken2-dark),
 );

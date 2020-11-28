@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Theme, ThemeService } from '../../services/theme/theme.service';
+import { Theme, ThemeService } from '@core/services/theme/theme.service';
 
 @Component({
   selector: 'app-nav-bar',

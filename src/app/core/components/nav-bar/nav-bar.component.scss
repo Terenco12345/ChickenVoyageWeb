@@ -1,12 +1,21 @@
 .main {
-    background-color: var(--brand-color);
     padding: 10px;
+    margin-bottom: 40px;
     display: block;
 }
 
-// Logo
-.logo a img{
-    height: 50px;
+// Color schemes
+.main {
+    background-color: var(--color-1);
+}
+
+nav a, .theme-toggle button {
+    color: var(--special-text-color);
+    transition: color 0.2s;
+}
+
+nav a:hover, .theme-toggle button:hover {
+    color: var(--special-text-color-emphasize);
 }
 
 .logo {
@@ -33,13 +42,10 @@ nav li {
 
 nav a {
     text-decoration: none;
-    
-    transition: color 0.2s;
-    color: var(--dark-accent);
 }
 
 nav a:hover {
-    color: var(--light-accent);
+    border: 5px solid var(--special-color);
 }
 
 // Bright/Dark theme toggle
@@ -54,11 +60,4 @@ nav a:hover {
 	padding: 0;
 	cursor: pointer;
     outline: inherit;
-
-    transition: color 0.2s;
-    color: var(--dark-accent);
-}
-
-.theme-toggle button:hover {
-    color: var(--light-accent);
 }
