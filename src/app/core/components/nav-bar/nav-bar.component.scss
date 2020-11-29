@@ -1,6 +1,5 @@
 .main {
     padding: 10px;
-    margin-bottom: 40px;
     display: block;
     transition: background-color 0.2s;
 }
@@ -20,6 +19,28 @@ nav a, .theme-toggle button {
 
 .logo {
     display: inline-block;
+    a {
+        &:hover{
+            filter: saturate(150%)
+        }
+        &:active{
+            filter: saturate(200%)
+        }
+    }
+}
+
+// Mobile menu toggle
+.mobile-menu-toggle {
+    display: inline-block;
+    margin: 10px 20px;
+    button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        outline: inherit;
+        font-size: 30px;
+    }
 }
 
 // Navigation
@@ -38,6 +59,7 @@ nav {
     }
     a {
         text-decoration: none;
+        padding: 10px;
         &:active {
             filter: hue-rotate(180deg);
         }
@@ -48,6 +70,7 @@ nav {
 .theme-toggle {
     display: inline-block;
     margin-top: 2vh;
+    padding: 10px;
     button {
         background: none;
         border: none;

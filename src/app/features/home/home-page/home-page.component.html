@@ -1,1 +1,32 @@
-<p>home-page works!</p>
+<div class="main">
+    <!--Sales pitch and call to action-->
+    <div class="sales-pitch">
+        <app-logo [size]="logoSize" (window:resize)="onResize($event)"></app-logo>
+        <h1>Elevate your role playing experience</h1>
+        <p>Create characters, plan campaigns, socialize with friends - all with ease</p>
+
+        <div class="call-to-action">
+            <button>Login</button>
+            <button>Register</button>
+        </div>
+    </div>
+
+    <!--More information-->
+    <div class="information">
+        <h1>Chicken Voyage</h1>
+        <p>With Chicken Voyage, you can create a character.</p>
+        <!--
+        <div class="information-cards">
+            <div class="information-card">
+                <h1>Character Creator</h1>
+            </div>
+            <div class="information-card">
+                <h1>Campaigns</h1>
+            </div>
+            <div class="information-card">
+                <h1>Campaigns</h1>
+            </div>
+        </div>
+        -->
+    </div>
+</div>

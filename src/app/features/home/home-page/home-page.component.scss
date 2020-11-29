@@ -1,0 +1,30 @@
+.main {
+    
+}
+
+.sales-pitch{
+    text-align: center;
+    height: 70vh;
+    padding-top: 10vh;
+    margin-bottom: 5vh;
+    background-color: var(--color-2);
+    .call-to-action{
+        button {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            outline: inherit;
+            margin: 20px;
+        }
+    }
+}
+
+.information{
+    text-align: center;
+    .information-cards {
+        .information-card {
+
+        }
+    }
+}

@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
+  logoSize: number;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.updateLogoSize()
   }
 
+  onResize(event: Event){
+    this.updateLogoSize()
+  }
+
+  updateLogoSize(){
+    this.logoSize = 256;
+    if(window.outerWidth < 768){
+      this.logoSize = 128;
+    }
+  }
 }
