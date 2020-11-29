@@ -2,6 +2,7 @@
     padding: 10px;
     margin-bottom: 40px;
     display: block;
+    transition: background-color 0.2s;
 }
 
 // Color schemes
@@ -12,10 +13,9 @@
 nav a, .theme-toggle button {
     color: var(--special-text-color);
     transition: color 0.2s;
-}
-
-nav a:hover, .theme-toggle button:hover {
-    color: var(--special-text-color-emphasize);
+    &:hover {
+        color: var(--special-text-color-emphasize);
+    }
 }
 
 .logo {
@@ -27,37 +27,32 @@ nav {
     display: inline-block;
     margin-top: 2vh;
     margin-left: 5vh;
-}
-
-nav ul {
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
-}
-
-nav li {
-    display: inline-block;
-    margin-right: 30px;
-}
-
-nav a {
-    text-decoration: none;
-}
-
-nav a:hover {
-    border: 5px solid var(--special-color);
+    ul {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+    li {
+        display: inline-block;
+        margin-right: 30px;
+    }
+    a {
+        text-decoration: none;
+        &:active {
+            filter: hue-rotate(180deg);
+        }
+    }
 }
 
 // Bright/Dark theme toggle
 .theme-toggle {
     display: inline-block;
     margin-top: 2vh;
-}
-
-.theme-toggle button {
-    background: none;
-	border: none;
-	padding: 0;
-	cursor: pointer;
-    outline: inherit;
+    button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        outline: inherit;
+    }
 }
