@@ -1,7 +1,7 @@
 <div class="main">
     <!--Hamburger Icon-->
-    <div class="mobile-menu-toggle">
-        <button><i class="fas fa-bars"></i></button>
+    <div class="mobile-menu-toggle" (click)="toggleMobileMenu()">
+        <button><i class="{{mobileMenuActive ? 'fas fa-times' : 'fas fa-bars'}}"></i></button>
     </div>
 
     <!--Logo-->
@@ -11,20 +11,51 @@
         </a>
     </div>
 
-    <!--Navigation area (links)-->
-    <nav>
+    <!--Navigation area (links) - Desktop -->
+    <nav class="top-nav">
         <ul>
             <li><a routerLink="home/">Home</a></li>
             <li><a routerLink="user/login/">Login</a></li>
             <li><a routerLink="user/register/">Register</a></li>
+            <!--Light and dark mode switch-->
+            <li>
+                <div *ngIf="getCurrentMode() == 'theme-light'" class="theme-toggle">
+                    <button (click)="toggleTheme()">
+                        <i class="fas fa-toggle-on"></i>
+                    </button>
+                    <i class="fas fa-sun"></i>
+                </div>
+                <div *ngIf="getCurrentMode() != 'theme-light'" class="theme-toggle">
+                    <button (click)="toggleTheme()">
+                        <i class="fas fa-toggle-off"></i>
+                    </button>
+                    <i class="fas fa-moon"></i>
+                </div>
+            </li>
         </ul>
     </nav>
-
-    <!--Light and dark mode switch-->
-    <div *ngIf="getCurrentMode() == 'theme-light'" class="theme-toggle">
-        <button (click)="toggleTheme()"><i class="fas fa-sun"></i></button>
-    </div>
-    <div *ngIf="getCurrentMode() != 'theme-light'" class="theme-toggle">
-        <button (click)="toggleTheme()"><i class="fas fa-sun"></i></button>
-    </div>
 </div>
+
+<!--Navigation area (links) - Mobile -->
+<nav class="mobile-nav" [@mobileMenuOpenClosed]="mobileMenuActive ? 'open' : 'closed'">
+    <ul>
+        <li><a routerLink="home/" (click)="toggleMobileMenu()">Home</a></li>
+        <li><a routerLink="user/login/" (click)="toggleMobileMenu()">Login</a></li>
+        <li><a routerLink="user/register/" (click)="toggleMobileMenu()">Register</a></li>
+        <!--Light and dark mode switch-->
+        <li>
+            <div *ngIf="getCurrentMode() == 'theme-light'" class="theme-toggle">
+                <button (click)="toggleTheme()">
+                    <i class="fas fa-toggle-on"></i>
+                </button>
+                <i class="fas fa-sun"></i>
+            </div>
+            <div *ngIf="getCurrentMode() != 'theme-light'" class="theme-toggle">
+                <button (click)="toggleTheme()">
+                    <i class="fas fa-toggle-off"></i>
+                </button>
+                <i class="fas fa-moon"></i>
+            </div>
+        </li>
+    </ul>
+</nav>

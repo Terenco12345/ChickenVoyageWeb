@@ -1,38 +1,42 @@
-.main {
-    padding: 10px;
-    display: block;
-    transition: background-color 0.2s;
-}
+// Variables
+$nav-bar-height: 80px;
+$nav-bar-side-padding: 20px;
 
-// Color schemes
+// Main
 .main {
+    overflow: hidden;
+    display: block;
+    padding-left: $nav-bar-side-padding;
+    padding-right: $nav-bar-side-padding;
+    transition: background-color 0.2s;
     background-color: var(--color-1);
 }
 
-nav a, .theme-toggle button {
-    color: var(--special-text-color);
-    transition: color 0.2s;
-    &:hover {
-        color: var(--special-text-color-emphasize);
-    }
-}
-
+// Logo
 .logo {
-    display: inline-block;
+    float: left;
+    height: $nav-bar-height;
+    display: flex;
+    align-items: center;
     a {
-        &:hover{
-            filter: saturate(150%)
+        &:hover {
+            filter: saturate(150%);
         }
-        &:active{
-            filter: saturate(200%)
+        &:active {
+            filter: saturate(200%);
         }
     }
 }
 
 // Mobile menu toggle
 .mobile-menu-toggle {
-    display: inline-block;
-    margin: 10px 20px;
+    float: left;
+    height: $nav-bar-height;
+
+    // Centering contents vertically
+    display: flex;
+    align-items: center;
+
     button {
         background: none;
         border: none;
@@ -44,38 +48,111 @@ nav a, .theme-toggle button {
 }
 
 // Navigation
-nav {
-    display: inline-block;
-    margin-top: 2vh;
-    margin-left: 5vh;
+.top-nav {
+    float: right;
+    height: $nav-bar-height;
+
+    // Centering contents vertically
+    display: flex;
+    align-items: center;
+
+    // Color
+    color: var(--special-text-color);
     ul {
+        // No bullet points or margin
         margin: 0px;
-        padding: 0px;
         list-style: none;
     }
     li {
         display: inline-block;
         margin-right: 30px;
     }
-    a {
-        text-decoration: none;
-        padding: 10px;
-        &:active {
-            filter: hue-rotate(180deg);
-        }
+    i {
+        display: inline-block;
     }
 }
 
-// Bright/Dark theme toggle
+// Bright/Dark theme toggle button
 .theme-toggle {
-    display: inline-block;
-    margin-top: 2vh;
-    padding: 10px;
     button {
+        // Color
+        color: var(--special-text-color);
         background: none;
         border: none;
         padding: 0;
         cursor: pointer;
         outline: inherit;
+
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+// Hover and active for nav bar links
+a,
+.theme-toggle button {
+    color: var(--special-text-color);
+    padding: 10px;
+    text-decoration: none;
+    &:active {
+        filter: hue-rotate(180deg);
+    }
+    transition: color 0.2s;
+    &:hover {
+        color: var(--special-text-color-emphasize);
+    }
+}
+
+// Mobile stuff
+.mobile-menu-toggle {
+    display: none;
+    button {
+        color: var(--special-text-color);
+        &:active {
+            filter: hue-rotate(180deg);
+        }
+        transition: color 0.2s;
+        &:hover {
+            color: var(--special-text-color-emphasize);
+        }
+    }
+}
+
+.mobile-nav {
+    display: none;
+    background-color: var(--color-2);     
+    overflow: hidden;
+    ul {
+        margin: 0px;
+        padding: 10px;
+    }
+    li {
+        height: 50px;
+        // Centering contents vertically
+        display: flex;
+        align-items: center;
+    }
+    a {
+        text-decoration: none;
+    }
+}
+
+// If screen is too small, switch to mobile mode
+@media (max-width: 950px) {
+    .mobile-menu-toggle {
+        display: flex;
+        float: left;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+
+    .logo {
+        float: right;
+    }
+
+    .top-nav {
+        display: none;
     }
 }

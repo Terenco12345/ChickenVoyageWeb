@@ -21,8 +21,10 @@ export class HomePageComponent implements OnInit {
 
   updateLogoSize(){
     this.logoSize = 256;
-    if(window.outerWidth < 768){
+    if (window.outerWidth < 400){
+      this.logoSize = 64;
+    } else if(window.outerWidth < 768){
       this.logoSize = 128;
-    }
+    } 
   }
 }
