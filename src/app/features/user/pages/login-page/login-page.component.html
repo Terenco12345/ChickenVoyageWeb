@@ -2,17 +2,16 @@
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value, $event)">
         <h1>Login</h1>
         <div>
-
             <label>
                 Email
                 <p class="form-error">{{errors.email}}</p>
-                <input type="text" formControlName="email">
+                <input id="email" type="text" formControlName="email">
             </label>
 
             <label>
                 Password
                 <p class="form-error">{{errors.password}}</p>
-                <input type="password" formControlName="password">
+                <input id="current-password" type="password" formControlName="password">
             </label>
 
             <p class="form-error">{{overallError}}</p>
