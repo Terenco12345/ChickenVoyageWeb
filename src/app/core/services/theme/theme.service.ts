@@ -33,10 +33,17 @@ export class ThemeService {
   }
 
   /**
+   * Update the light/dark theme of the document.
+   */
+  public updateTheme(): void{
+    this.setTheme(this.getCurrentThemeFromLocalStorage())
+  }
+
+  /**
    * Set the theme within the document to be a new theme, and update local storage.
    * @param theme New theme
    */
-  private setTheme(theme: Theme){
+  private setTheme(theme: Theme): void{
     console.log("Changing theme to "+theme);
     document.body.classList.remove(this.getCurrentThemeFromLocalStorage());
     document.body.classList.add(theme);

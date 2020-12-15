@@ -1,6 +1,9 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '@core/services/auth/auth.service';
 import { Theme, ThemeService } from '@core/services/theme/theme.service';
+import { UserProfile, UserService } from '@user/services/user.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -22,13 +25,30 @@ import { Theme, ThemeService } from '@core/services/theme/theme.service';
 })
 export class NavBarComponent implements OnInit {
 
-  @Input()
   mobileMenuActive: boolean = false;
 
-  constructor(private themeService: ThemeService) { }
+  @Input()
+  isLoggedIn = false;
+
+  constructor(
+    private themeService: ThemeService, 
+    private userService: UserService, 
+    private authService: AuthService,
+    private router: Router) { }
 
   ngOnInit(): void {
+    this.mobileMenuActive = false;
+    this.userService.getCurrentUser().subscribe(
+      res => {
+        this.isLoggedIn = true;
+      },
+      _ => {
+        this.authService.setToken("");
+        this.isLoggedIn = false;
+      }
+    )
   }
+
 
   /**
    * Toggle app's theme (light mode or dark mode.)
@@ -49,5 +69,17 @@ export class NavBarComponent implements OnInit {
    */
   toggleMobileMenu() {
     this.mobileMenuActive = !this.mobileMenuActive;
+  }
+
+  /**
+   * Closes the mobile menu.
+   */
+  closeMobileMenu(){
+    this.mobileMenuActive = false;
+  }
+
+  logout(){
+    this.authService.setToken("");
+    this.isLoggedIn = false;
   }
 }

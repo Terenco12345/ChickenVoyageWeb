@@ -1,9 +1,13 @@
+import { UserRoutingModule } from './user-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
-import { UserRoutingModule } from './user-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -12,6 +16,9 @@ import { UserRoutingModule } from './user-routing.module';
     ProfilePageComponent,
   ],
   imports: [
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
     CommonModule,
     UserRoutingModule
   ]

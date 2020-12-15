@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '@core/services/auth/auth.service';
+import { UserProfile, UserService } from '@user/services/user.service';
 
 @Component({
   selector: 'app-home-page',
@@ -7,24 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  logoSize: number;
+  isLoggedIn = false;
+  profile: UserProfile = {
+    displayName: "",
+    email: "",
+    creationDate: ""
+  }
 
-  constructor() { }
+  constructor(private userService: UserService, private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.updateLogoSize()
-  }
-
-  onResize(event: Event){
-    this.updateLogoSize()
-  }
-
-  updateLogoSize(){
-    this.logoSize = 256;
-    if (window.outerWidth < 400){
-      this.logoSize = 64;
-    } else if(window.outerWidth < 768){
-      this.logoSize = 128;
-    } 
+    this.userService.getCurrentUser().subscribe(
+      res => {
+        var profile: UserProfile = res.body;
+        this.profile.displayName = profile.displayName;
+        this.isLoggedIn = true;
+      },
+      _ => {
+        this.authService.setToken("");
+        this.isLoggedIn = false;
+      }
+    )
   }
 }

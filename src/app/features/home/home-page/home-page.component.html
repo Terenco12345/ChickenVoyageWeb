@@ -1,33 +1,16 @@
-<div class="main">
-    <!--Sales pitch and call to action-->
-    <div class="sales-pitch">
-        <app-logo [size]="logoSize" (window:resize)="onResize($event)"></app-logo>
-        <h1>Elevate your role playing experience</h1>
-        <p>Create characters, plan campaigns, socialize with friends - all with ease</p>
-
-        <div class="call-to-action">
-            <button>Login</button>
-            <button>Register</button>
-        </div>
+<div class="new-user" *ngIf="!isLoggedIn">
+    <h1>Welcome to Chicken Voyage!</h1>
+    <h2>The DND all-purpose tool</h2>
+    <div class="login">
+        <a class="solid-button" href="/login">Login</a>
     </div>
-
-    <!--More information-->
-    <div class="information">
-        <h1>Chicken Voyage</h1>
-        <p>With Chicken Voyage, you can create a character.</p>
-
-        <div class="columns">
-            <div class="information-card column">
-                <h1>Character Creator</h1>
-            </div>
-
-            <div class="information-card column">
-                <h1>Character Creator</h1>
-            </div>
-
-            <div class="information-card column">
-                <h1>Character Creator</h1>
-            </div>
-        </div>
+    <div class="register">
+        <a class="solid-button" href="/register">Register</a>
+    </div>
+</div>
+<div class="returning-user" *ngIf="isLoggedIn">
+    <h1>Welcome back, {{profile.displayName}}!</h1>
+    <div class="view-sheets">
+        <a class="solid-button" href="/character-sheet">View Character Sheets</a>
     </div>
 </div>

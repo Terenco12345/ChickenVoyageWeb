@@ -1,0 +1,14 @@
+.main {
+    text-align: center;
+    margin-top: 5vh;
+}
+
+button {
+    outline: inherit;
+}
+
+.form-error {
+    font-size: 18px;
+    color: var(--error-text-color);
+    display: block;
+}

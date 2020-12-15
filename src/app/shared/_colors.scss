@@ -1,10 +1,10 @@
 // Color scheme
 $color-1: #FDE74C;
-$color-1-dark: #423044;
-$color-2: #5BC0EB;
-$color-2-dark: #1f2135;
+$color-1-dark: #63016e;
+$color-2: #a6ff00;
+$color-2-dark: #09003b;
 $color-3: #9BC53D;
-$color-3-dark: #545663;
+$color-3-dark: #114580;
 $color-4: #E55934;
 $color-4-dark: #242424;
 $color-5: #FA7921;
@@ -13,6 +13,9 @@ $color-5-dark: #000000;
 // Background
 $background-color: #f4ffdc;
 $background-color-dark: #121212;
+
+$form-background-color: #ffffff;
+$form-background-color-dark: #444242;
 
 // Regular text
 $text-color: #121212;
@@ -23,27 +26,30 @@ $special-text-color: #09212b;
 $special-text-color-dark: #c4c4c4;
 
 // For text in links and buttons being hovered
-$special-text-color-emphasize: #6896aa;
-$special-text-color-emphasize-dark: #220000;
+$special-text-color-emphasize: #00b3ff;
+$special-text-color-emphasize-dark: #6f00ff;
+
+$error-text-color: rgb(255, 0, 0);
+$error-text-color-dark: rgb(255, 0, 0);
 
 // Logo colors
 $logo-outline: #000000;
-$logo-outline-dark: #0f0505;
+$logo-outline-dark: #000000;
 
 $logo-text1: #6abe30;
-$logo-text1-dark: #504891;
+$logo-text1-dark: #c300dd;
 
 $logo-text2: #37946e;
-$logo-text2-dark: #44225c;
+$logo-text2-dark: #5700c9;
 
 $logo-chicken1: #fbf236;
-$logo-chicken1-dark: #343d8b;
+$logo-chicken1-dark: #0016da;
 
 $logo-chicken1Shadow: #d4cc21;
-$logo-chicken1Shadow-dark: #2b3272;
+$logo-chicken1Shadow-dark: rgb(0, 13, 134);
 
 $logo-chicken2: #df7126;
-$logo-chicken2-dark: #561d68;
+$logo-chicken2-dark: #500068;
 
 
 // Colors are sorted into tuples (light theme, dark theme)
@@ -57,9 +63,11 @@ $colors: (
 
     // Text colors
     --background-color: ($background-color, $background-color-dark),
+    --form-background-color: ($form-background-color, $form-background-color-dark),
     --text-color: ($text-color, $text-color-dark),
     --special-text-color: ($special-text-color, $special-text-color-dark),
     --special-text-color-emphasize: ($special-text-color-emphasize, $special-text-color-emphasize-dark),
+    --error-text-color: ($error-text-color, $error-text-color-dark),
 
     // Logo colors
     --logo-outline: ($logo-outline, $logo-outline-dark),

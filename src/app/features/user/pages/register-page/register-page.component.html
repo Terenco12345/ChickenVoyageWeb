@@ -1,1 +1,31 @@
-<p>register-page works!</p>
+<div class="main">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value, $event)">
+        <h1>Register</h1>
+        <div>
+            <label>
+                Display Name <p class="form-error">{{errors.displayName}}</p>
+                <input type="text" formControlName="displayName">
+            </label>
+
+            <label>
+                Email <p class="form-error">{{errors.email}}</p>
+                <input type="text" formControlName="email">
+            </label>
+        
+            <label>
+                Password <p class="form-error">{{errors.password}}</p>
+                <input type="password" formControlName="password">
+            </label>
+
+            <label>
+                Confirm Password <p class="form-error">{{errors.confirmPassword}}</p>
+                <input type="password" formControlName="confirmPassword">
+            </label>
+    
+            <p class="form-error">{{overallError}}</p>
+            <button type="submit" class="solid-button">
+                Register
+            </button>
+        </div>
+    </form>
+</div>

@@ -8,8 +8,6 @@ $nav-bar-side-padding: 20px;
     display: block;
     padding-left: $nav-bar-side-padding;
     padding-right: $nav-bar-side-padding;
-    transition: background-color 0.2s;
-    background-color: var(--color-1);
 }
 
 // Logo
@@ -38,10 +36,6 @@ $nav-bar-side-padding: 20px;
     align-items: center;
 
     button {
-        background: none;
-        border: none;
-        padding: 0;
-        cursor: pointer;
         outline: inherit;
         font-size: 30px;
     }
@@ -70,17 +64,14 @@ $nav-bar-side-padding: 20px;
     i {
         display: inline-block;
     }
+    button {
+        outline: inherit;
+    }
 }
 
 // Bright/Dark theme toggle button
 .theme-toggle {
     button {
-        // Color
-        color: var(--special-text-color);
-        background: none;
-        border: none;
-        padding: 0;
-        cursor: pointer;
         outline: inherit;
 
         margin-left: 5px;
@@ -88,34 +79,9 @@ $nav-bar-side-padding: 20px;
     }
 }
 
-// Hover and active for nav bar links
-a,
-.theme-toggle button {
-    color: var(--special-text-color);
-    padding: 10px;
-    text-decoration: none;
-    &:active {
-        filter: hue-rotate(180deg);
-    }
-    transition: color 0.2s;
-    &:hover {
-        color: var(--special-text-color-emphasize);
-    }
-}
-
 // Mobile stuff
 .mobile-menu-toggle {
     display: none;
-    button {
-        color: var(--special-text-color);
-        &:active {
-            filter: hue-rotate(180deg);
-        }
-        transition: color 0.2s;
-        &:hover {
-            color: var(--special-text-color-emphasize);
-        }
-    }
 }
 
 .mobile-nav {

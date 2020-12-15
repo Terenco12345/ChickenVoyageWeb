@@ -1,10 +1,94 @@
 /* You can add global styles to this file, and also import other style files */
 @import './app/shared/theme';
 
+$form-size: 21px;
+
 body {
     font-family: 'Rubik', sans-serif;
 }
 
 .theme-change-transition {
-    transition: color 0.5s, background-color 0.5s;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+// Make links and buttons the same - no decoration, same colour on hover/click
+a, button {
+    color: var(--special-text-color);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    padding: 10px;
+    text-decoration: none;
+    transition: color 0.2s;
+   
+    &:hover {
+        color: var(--special-text-color-emphasize);
+        text-decoration: none;
+    }
+}
+
+form {
+    display: inline-block;
+    text-align: center;
+    width: 800px;
+    max-width: 90%;
+    padding-top: $form-size * 5;
+    padding-bottom: $form-size * 5;
+    margin: auto;
+    font-size: $form-size;
+    div {
+        display: inline-block;
+        width: 400px;
+        max-width: 100%;
+    }
+    label {
+        position: relative;
+        display: block;
+        text-align: left;
+        input {
+            width: 100%;
+            display: block;
+        }
+    }
+    input {
+        outline: inherit;
+        color: var(--text-color);
+        background-color: var(--form-background-color);
+        border-radius: 4px;
+    }
+    button {
+        margin-top: 20px;
+        outline: inherit;
+        width: 100%;
+        transition: background-color 0.2s;
+    }
+    .form-error {
+        margin: 0;
+        color: var(--emphasized-text-color);
+        display: inline-block;
+    }
+}
+
+// Solid color button
+.solid-button {
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    outline: inherit;
+    border-radius: 4px;
+    background-color: var(--color-1);
+    color: var(--emphasized-text-color);
+    padding: 7px;
+    text-decoration: none;
+
+    transition: background-color 0.2s color 0.2s;
+    &:active {
+        background-color: var(--color-3);
+        color: var(--emphasized-text-color);
+    }
+    &:hover {
+        background-color: var(--color-2);
+        color: var(--emphasized-text-color);
+    }
 }
