@@ -15,10 +15,10 @@
     <nav class="top-nav">
         <ul>
             <li><a routerLink="home/">Home</a></li>
-            <li *ngIf="!isLoggedIn"><a routerLink="user/login/">Login</a></li>
-            <li *ngIf="!isLoggedIn"><a routerLink="user/register/">Register</a></li>
+            <li *ngIf="!profile?.isLoggedIn"><a routerLink="user/login/">Login</a></li>
+            <li *ngIf="!profile?.isLoggedIn"><a routerLink="user/register/">Register</a></li>
 
-            <li *ngIf="isLoggedIn"><button (click)="logout()">Logout</button></li>
+            <li *ngIf="profile?.isLoggedIn"><button (click)="logout()">Logout</button></li>
             
 
             <!--Light and dark mode switch-->
@@ -44,8 +44,9 @@
 <nav class="mobile-nav" [@mobileMenuOpenClosed]="mobileMenuActive ? 'open' : 'closed'">
     <ul>
         <li><a routerLink="home/" (click)="closeMobileMenu()">Home</a></li>
-        <li><a routerLink="user/login/" (click)="closeMobileMenu()">Login</a></li>
-        <li><a routerLink="user/register/" (click)="closeMobileMenu()">Register</a></li>
+        <li *ngIf="!profile?.isLoggedIn"><a routerLink="user/login/">Login</a></li>
+        <li *ngIf="!profile?.isLoggedIn"><a routerLink="user/register/">Register</a></li>
+        <li *ngIf="profile?.isLoggedIn"><button (click)="logout()">Logout</button></li>
         <!--Light and dark mode switch-->
         <li>
             <div *ngIf="getCurrentMode() == 'theme-light'" class="theme-toggle">

@@ -1,4 +1,4 @@
-<div class="new-user" *ngIf="!isLoggedIn">
+<div class="new-user" *ngIf="!profile?.isLoggedIn">
     <h1>Welcome to Chicken Voyage!</h1>
     <h2>The DND all-purpose tool</h2>
     <div class="login">
@@ -8,8 +8,8 @@
         <a class="solid-button" href="/register">Register</a>
     </div>
 </div>
-<div class="returning-user" *ngIf="isLoggedIn">
-    <h1>Welcome back, {{profile.displayName}}!</h1>
+<div class="returning-user" *ngIf="profile?.isLoggedIn">
+    <h1>Welcome back, {{profile?.displayName}}!</h1>
     <div class="view-sheets">
         <a class="solid-button" href="/character-sheet">View Character Sheets</a>
     </div>

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, SelectControlValueAccessor } from '@angular/forms';
 import { checkEmailFormat } from '@user/user.helper';
 import { UserService } from '@user/services/user.service';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { AuthService } from '@core/services/auth/auth.service';
+import { Subscription } from 'rxjs';
 
 interface LoginValues {
   email: string,
@@ -21,7 +22,7 @@ interface LoginResponse {
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss']
 })
-export class LoginPageComponent implements OnInit {
+export class LoginPageComponent implements OnInit, OnDestroy {
 
   loginForm = new FormGroup({
     email: new FormControl(''),
@@ -34,10 +35,32 @@ export class LoginPageComponent implements OnInit {
     password: ""
   }
 
+  private _tokenSubscription: Subscription = null;
+  private _errorSubscription: Subscription = null;
+
   constructor(private userService: UserService, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-    
+    this._tokenSubscription = this.userService.getTokenObservable().subscribe(
+      res => {
+        console.log("login page: logged in |", res)
+        this.router.navigate(["/home"]);
+        this.authService.setToken(res);
+        this.userService.getCurrentUser();
+      },
+    )
+
+    this._errorSubscription = this.userService.getErrorObservable().subscribe(
+      res => {
+        console.log("login page: error |", res);
+        this.overallError = res;
+      }
+    )
+  }
+
+  ngOnDestroy(): void {
+    this._tokenSubscription.unsubscribe();
+    this._errorSubscription.unsubscribe();
   }
 
   /**
@@ -49,22 +72,10 @@ export class LoginPageComponent implements OnInit {
     event.preventDefault();
     if (this.validateForm()) {
       // Send request to login
-      this.userService.loginUser(formValues.email, formValues.password)
-        .subscribe(
-          res => {
-            // Store token in local storage
-            var loginRes: LoginResponse = res.body;
-            this.authService.setToken(loginRes.token);
-            this.router.navigate(["/home"]);
-          },
-          errorRes => {
-            console.log(errorRes);
-            this.overallError = errorRes.error.error;
-          });
+      this.userService.loginUser(formValues.email, formValues.password);
     } else {
       // Don't send a request to login
     }
-
   }
 
   /**

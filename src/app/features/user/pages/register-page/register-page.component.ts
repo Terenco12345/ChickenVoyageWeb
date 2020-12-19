@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '@core/services/auth/auth.service';
 import { UserService } from '@user/services/user.service';
 import { checkDisplayNameFormat, checkEmailFormat, checkPasswordFormat } from '@user/user.helper';
+import { Subscription } from 'rxjs';
 
 interface RegisterValues {
   displayName: string,
@@ -15,7 +18,7 @@ interface RegisterValues {
   templateUrl: './register-page.component.html',
   styleUrls: ['./register-page.component.scss']
 })
-export class RegisterPageComponent implements OnInit {
+export class RegisterPageComponent implements OnInit, OnDestroy {
 
   registerForm = new FormGroup({
     displayName: new FormControl(''),
@@ -32,9 +35,32 @@ export class RegisterPageComponent implements OnInit {
     confirmPassword: ""
   }
 
-  constructor(private userService: UserService) { }
+  private _tokenSubscription: Subscription = null;
+  private _errorSubscription: Subscription = null;
+
+  constructor(private userService: UserService, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
+    this._tokenSubscription = this.userService.getTokenObservable().subscribe(
+      res => {
+        console.log("register page: logged in |", res)
+        this.router.navigate(["/home"]);
+        this.authService.setToken(res);
+        this.userService.getCurrentUser();
+      },
+    )
+
+    this._errorSubscription = this.userService.getErrorObservable().subscribe(
+      res => {
+        console.log("register page: error |", res);
+        this.overallError = res;
+      }
+    )
+  }
+
+  ngOnDestroy(): void {
+    this._tokenSubscription.unsubscribe();
+    this._errorSubscription.unsubscribe();
   }
 
   /**

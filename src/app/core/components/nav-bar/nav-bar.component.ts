@@ -27,8 +27,7 @@ export class NavBarComponent implements OnInit {
 
   mobileMenuActive: boolean = false;
 
-  @Input()
-  isLoggedIn = false;
+  profile: UserProfile = null;
 
   constructor(
     private themeService: ThemeService, 
@@ -38,17 +37,17 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.mobileMenuActive = false;
-    this.userService.getCurrentUser().subscribe(
+    this.userService.getUserObservable().subscribe(
       res => {
-        this.isLoggedIn = true;
+        console.log("nav bar: get user profile |", res)
+        this.profile = res;
       },
       _ => {
         this.authService.setToken("");
-        this.isLoggedIn = false;
       }
-    )
+    );
+    this.userService.getCurrentUser();
   }
-
 
   /**
    * Toggle app's theme (light mode or dark mode.)
@@ -80,6 +79,6 @@ export class NavBarComponent implements OnInit {
 
   logout(){
     this.authService.setToken("");
-    this.isLoggedIn = false;
+    this.userService.logoutUser();
   }
 }
