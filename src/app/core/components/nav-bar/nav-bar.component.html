@@ -13,13 +13,18 @@
 
     <!--Navigation area (links) - Desktop -->
     <nav class="top-nav">
-        <ul>
+        <ul *ngIf="loading">
+            <li><app-loading [size]='15'></app-loading></li>
+        </ul>
+        <ul *ngIf="!loading">
             <li><a routerLink="home/">Home</a></li>
+
+            <!--These buttons are only shown if the user is logged in-->
             <li *ngIf="!profile?.isLoggedIn"><a routerLink="user/login/">Login</a></li>
             <li *ngIf="!profile?.isLoggedIn"><a routerLink="user/register/">Register</a></li>
 
+            <!--These buttons are only shown if the user is logged out-->
             <li *ngIf="profile?.isLoggedIn"><button (click)="logout()">Logout</button></li>
-            
 
             <!--Light and dark mode switch-->
             <li>
@@ -44,9 +49,10 @@
 <nav class="mobile-nav" [@mobileMenuOpenClosed]="mobileMenuActive ? 'open' : 'closed'">
     <ul>
         <li><a routerLink="home/" (click)="closeMobileMenu()">Home</a></li>
-        <li *ngIf="!profile?.isLoggedIn"><a routerLink="user/login/">Login</a></li>
-        <li *ngIf="!profile?.isLoggedIn"><a routerLink="user/register/">Register</a></li>
-        <li *ngIf="profile?.isLoggedIn"><button (click)="logout()">Logout</button></li>
+
+        <li *ngIf="!profile?.isLoggedIn"><a routerLink="user/login/" (click)="closeMobileMenu()">Login</a></li>
+        <li *ngIf="!profile?.isLoggedIn"><a routerLink="user/register/" (click)="closeMobileMenu()">Register</a></li>
+        <li *ngIf="profile?.isLoggedIn"><button (click)="logout()" (click)="closeMobileMenu()">Logout</button></li>
         <!--Light and dark mode switch-->
         <li>
             <div *ngIf="getCurrentMode() == 'theme-light'" class="theme-toggle">

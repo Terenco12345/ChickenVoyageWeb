@@ -15,9 +15,12 @@
             </label>
 
             <p class="form-error">{{overallError}}</p>
+            
             <button type="submit" class="solid-button">
-                Login
+                <div *ngIf="!loading">Login</div>
+                <app-loading *ngIf="loading"></app-loading>
             </button>
         </div>
     </form>
+    
 </div>

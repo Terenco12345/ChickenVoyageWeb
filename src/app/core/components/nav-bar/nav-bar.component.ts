@@ -25,9 +25,10 @@ import { UserProfile, UserService } from '@user/services/user.service';
 })
 export class NavBarComponent implements OnInit {
 
+  // Public fields
   mobileMenuActive: boolean = false;
-
   profile: UserProfile = null;
+  loading: boolean;
 
   constructor(
     private themeService: ThemeService, 
@@ -36,14 +37,17 @@ export class NavBarComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
+    this.loading = true;
     this.mobileMenuActive = false;
     this.userService.getUserObservable().subscribe(
       res => {
         console.log("nav bar: get user profile |", res)
         this.profile = res;
+        this.loading = false;
       },
       _ => {
         this.authService.setToken("");
+        this.loading = false;
       }
     );
     this.userService.getCurrentUser();
@@ -78,6 +82,7 @@ export class NavBarComponent implements OnInit {
   }
 
   logout(){
+    this.loading = true;
     this.authService.setToken("");
     this.userService.logoutUser();
   }

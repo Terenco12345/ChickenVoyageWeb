@@ -10,22 +10,29 @@ import { Subscription } from 'rxjs';
 })
 export class HomePageComponent implements OnInit, OnDestroy {
 
+  // Public fields
   profile: UserProfile = null;
-  
+  loading: boolean;
+
+  // Private fields
   private _subscription: Subscription = null;
 
   constructor(private userService: UserService, private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.loading = true;
     this._subscription = this.userService.getUserObservable().subscribe(
       res => {
         console.log("home page updated profile", res);
         this.profile = res;
+        this.loading = false;
       },
       _ => {
         this.authService.setToken("");
+        this.loading = false;
       }
-    )
+    );
+    this.userService.getCurrentUser();
   }
 
   ngOnDestroy(): void{

@@ -24,6 +24,7 @@ interface LoginResponse {
 })
 export class LoginPageComponent implements OnInit, OnDestroy {
 
+  // Public fields
   loginForm = new FormGroup({
     email: new FormControl(''),
     password: new FormControl('')
@@ -35,6 +36,9 @@ export class LoginPageComponent implements OnInit, OnDestroy {
     password: ""
   }
 
+  loading: boolean;
+
+  // Private fields
   private _tokenSubscription: Subscription = null;
   private _errorSubscription: Subscription = null;
 
@@ -47,6 +51,7 @@ export class LoginPageComponent implements OnInit, OnDestroy {
         this.router.navigate(["/home"]);
         this.authService.setToken(res);
         this.userService.getCurrentUser();
+        this.loading = false;
       },
     )
 
@@ -54,6 +59,7 @@ export class LoginPageComponent implements OnInit, OnDestroy {
       res => {
         console.log("login page: error |", res);
         this.overallError = res;
+        this.loading = false;
       }
     )
   }
@@ -70,11 +76,13 @@ export class LoginPageComponent implements OnInit, OnDestroy {
    */
   onSubmit(formValues: LoginValues, event: Event): void {
     event.preventDefault();
+    this.loading = true;
     if (this.validateForm()) {
       // Send request to login
       this.userService.loginUser(formValues.email, formValues.password);
     } else {
       // Don't send a request to login
+      this.loading = false;
     }
   }
 
