@@ -47,7 +47,10 @@
 
 <!--Navigation area (links) - Mobile -->
 <nav class="mobile-nav" [@mobileMenuOpenClosed]="mobileMenuActive ? 'open' : 'closed'">
-    <ul>
+    <ul *ngIf="loading">
+        <li><app-loading [size]='15'></app-loading></li>
+    </ul>
+    <ul *ngIf="!loading">
         <li><a routerLink="home/" (click)="closeMobileMenu()">Home</a></li>
 
         <li *ngIf="!profile?.isLoggedIn"><a routerLink="user/login/" (click)="closeMobileMenu()">Login</a></li>

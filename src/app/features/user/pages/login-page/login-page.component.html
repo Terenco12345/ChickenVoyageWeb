@@ -2,20 +2,24 @@
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value, $event)">
         <h1>Login</h1>
         <div>
+            <!--Email form input-->
             <label>
                 Email
                 <p class="form-error">{{errors.email}}</p>
                 <input id="email" type="text" formControlName="email">
             </label>
 
+            <!--Password form input-->
             <label>
                 Password
                 <p class="form-error">{{errors.password}}</p>
                 <input id="current-password" type="password" formControlName="password">
             </label>
 
+            <!--This region shows errors that come from the backend-->
             <p class="form-error">{{overallError}}</p>
             
+            <!--Submit button, has a fancy loading spinner-->
             <button type="submit" class="solid-button">
                 <div *ngIf="!loading">Login</div>
                 <app-loading *ngIf="loading"></app-loading>

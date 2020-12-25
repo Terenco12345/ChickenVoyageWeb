@@ -1,9 +1,15 @@
+<!--Loading page to figure out if a user is logged in or not-->
 <div class="main" *ngIf="loading">
     <app-loading [size]='40'></app-loading>
 </div>
+
+<!--Title page for users which aren't logged in-->
 <div class="main" *ngIf="!profile?.isLoggedIn && !loading">
+    <!--Title-->
     <h1>Welcome to Chicken Voyage!</h1>
     <h2>The DND all-purpose tool</h2>
+
+    <!--Login and register buttons-->
     <div class="login">
         <a class="solid-button" href="/login">Login</a>
     </div>
@@ -11,6 +17,8 @@
         <a class="solid-button" href="/register">Register</a>
     </div>
 </div>
+
+<!--Title page for users which are logged in-->
 <div class="main" *ngIf="profile?.isLoggedIn && !loading">
     <h1>Welcome back, {{profile?.displayName}}!</h1>
     <div class="view-sheets">

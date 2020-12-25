@@ -9,7 +9,13 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { SharedModule } from 'app/shared/shared.module';
 
-
+/**
+ * The user module contains pages and components which involve authenticating and manipulating users.
+ * This includes:
+ * - Login page
+ * - Profile page
+ * - Register page
+ */
 @NgModule({
   declarations: [
     LoginPageComponent,
